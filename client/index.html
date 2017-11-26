@@ -24,14 +24,8 @@
 </head>
 <body>
 <div id="app">
-	<div class="container-fluid">
-		<div class="col-md-6" style="background-color:yellow;">
-			<p>User Task</p>
-		</div>
-		<div class="col-sm-6" style="background-color:pink;">
-					
-		</div>
-	</div>
+
+	<nav-header></nav-header>
 
 	<div class="alert alert-success fade in" id="sukses">
 		<strong>Success!</strong> This alert box could indicate a successful or positive action.
@@ -43,11 +37,12 @@
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	</div>
 
-	<task-table :tasklist="tasklist" ></task-table>
+	<task-table></task-table>
 </div>    
 </body>
 
 <!-- component -->
+<script src="/assets/js/component/navHeader.js"></script>
 <script src="/assets/js/component/taskList.js"></script>
 <script src="/assets/js/component/taskTable.js"></script>
 
