@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Index</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<!-- axios javascript -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<!-- vue js and component -->
+<script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+<div id="app">
+	<div class="container-fluid">
+		<div class="col-md-6" style="background-color:yellow;">
+			<p>User Task</p>
+		</div>
+		<div class="col-sm-6" style="background-color:pink;">
+					
+		</div>
+	</div>
+
+	<div class="alert alert-success fade in" id="sukses">
+		<strong>Success!</strong> This alert box could indicate a successful or positive action.
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	</div>
+
+	<div class="alert alert-warning fade in" id="gagal">
+		<strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	</div>
+
+	<task-table :tasklist="tasklist" ></task-table>
+</div>    
+</body>
+
+<!-- component -->
+<script src="/assets/js/component/taskList.js"></script>
+<script src="/assets/js/component/taskTable.js"></script>
+
+<!-- js -->
+<!-- <script src="/assets/js/index.js"></script> -->
+<script src="/assets/js/script.js"></script>
+</html>
