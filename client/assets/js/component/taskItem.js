@@ -1,4 +1,4 @@
-Vue.component('task-list', {
+Vue.component('task-item', {
   props : ['task'],
   template : `
   <tr>
@@ -8,10 +8,15 @@ Vue.component('task-list', {
     <td>
       <div class="btn-group">
         <button type="button" class="btn btn-primary">Edit</button>
-        <button type="button" class="btn btn-primary">Delete</button>
+        <button type="button" class="btn btn-primary" v-on:click="deleteTask(task._id)">Delete</button>
         <button type="button" class="btn btn-primary">Complete</button>
       </div> 
     </td>
   </tr>
-  `
+  `,
+  methods: {
+    deleteTask (taskID) {
+      this.$emit('deletetask', taskID)
+    }
+  }
 })

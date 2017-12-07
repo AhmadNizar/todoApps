@@ -13,7 +13,7 @@ Vue.component('task-table', {
             </tr>
           </thead>
           <tbody>
-            <task-list v-for="(task, index) in tasklist" :key="index" :task="task"></task-list>
+            <task-item v-for="(task, index) in tasklist" :key="index" :task="task" v-on:deletetask="deleteUserTask"></task-item>
           </tbody>
         </table>
       </div>
@@ -33,6 +33,22 @@ Vue.component('task-table', {
         this.tasklist = data
         $("#sukses").hide();
         $("#gagal").hide();
+      }) 
+      .catch((error) => {
+        console.log(error);
+      })
+    },
+    deleteUserTask (userId) {
+      console.log(userId)
+      axios.delete(`http://localhost:3000/api/tasks/${userId}`)
+      .then((res) => {
+        if(res.status === 200){   
+          let deleteIndex = this.tasklist.findIndex((element) => {
+            return element._id === userId
+          })
+
+          this.tasklist.splice(deleteIndex, 1)
+        }
       }) 
       .catch((error) => {
         console.log(error);
