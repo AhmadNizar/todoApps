@@ -1,20 +1,19 @@
 const app 		 = require('express')()
 const bodyParser = require('body-parser')
 const cors       = require('cors')
+const mongoose   = require('mongoose')
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
 app.use(bodyParser.json())
-
 app.use(cors())
 
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+mongoose.connect('mongodb://AhmadNizar:cBnmgEXaknFbpUNN@ahmadnizardb-shard-00-00-scdlc.mongodb.net:27017,ahmadnizardb-shard-00-01-scdlc.mongodb.net:27017,ahmadnizardb-shard-00-02-scdlc.mongodb.net:27017/dbtodopakhaji?ssl=true&replicaSet=AhmadNizarDB-shard-0&authSource=admin', (err) => {
+  if(!err) {
+    console.log('DATABASE TERHUBUNG');
+  } else {
+    console.log('TIDAK TERHUBUNG DATABASE');
+  }
+})
 
 const User = require('./routes/userRoute')
 const Task = require('./routes/listRoute')
