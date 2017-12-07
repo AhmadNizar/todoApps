@@ -22,6 +22,6 @@ const Task = require('./routes/listRoute')
 app.use('/api/users', User)
 app.use('/api/tasks', Task)
 
-app.listen(3000, (req, res) =>{
-	console.log('jalan gan');
+app.listen(process.env.PORT || 3000, () => {
+	console.log('Jalan tong')
 })
